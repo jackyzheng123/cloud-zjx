@@ -31,15 +31,15 @@ public class ProviderApplication {
 		return new RestTemplate();
 	}
 
-	@RequestMapping("/home")
-	public String callHome(){
-		LOG.info("calling trace cloud-zjx-provider");
-		return restTemplate.getForObject("http://localhost:8081/miya", String.class);
+	@RequestMapping("/miya")
+	public String home(){
+		LOG.info("calling trace cloud-zjx-provider-zipkin");
+		return restTemplate.getForObject("http://localhost:8673/info", String.class);
 	}
 	@RequestMapping("/info")
 	public String info(){
-		LOG.info("calling trace cloud-zjx-provider");
-		return "i'm cloud-zjx-provider";
+		LOG.info("calling trace cloud-zjx-provider-zipkin");
+		return "i'm cloud-zjx-provider-zipkin";
 	}
 
 	@Bean

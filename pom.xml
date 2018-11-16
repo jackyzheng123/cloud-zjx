@@ -26,6 +26,7 @@
 		<module>cloud-zjx-zuul</module>
 		<module>cloud-zjx-config-server</module>
 		<module>cloud-zjx-config-client</module>
+		<module>cloud-zjx-provider-zipkin</module>
     <module>test</module>
   </modules>
 
