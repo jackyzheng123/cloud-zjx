@@ -24,6 +24,8 @@
 		<module>cloud-zjx-feign</module>
 		<module>cloud-zjx-ribbon-hystrix</module>
 		<module>cloud-zjx-zuul</module>
+		<module>cloud-zjx-config-server</module>
+		<module>cloud-zjx-config-client</module>
     <module>test</module>
   </modules>
 
