@@ -1,4 +1,4 @@
-Spring Cloud 脚手架
+Spring Cloud
 ===
 
 所使用相关技术：
