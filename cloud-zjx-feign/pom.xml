@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zjx</groupId>
-	<artifactId>cloud-zjx-ribbon</artifactId>
+	<artifactId>cloud-zjx-feign</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cloud-zjx-ribbon</name>
-	<description>cloud ribbon</description>
+	<name>cloud-zjx-feign</name>
+	<description>cloud feign</description>
 
 	<parent>
 		<groupId>com.zjx</groupId>
@@ -26,7 +26,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 	</dependencies>
 

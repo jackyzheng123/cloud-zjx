@@ -21,6 +21,7 @@
         <module>cloud-zjx-eureka</module>
         <module>cloud-zjx-provider</module>
 		<module>cloud-zjx-ribbon</module>
+		<module>cloud-zjx-feign</module>
     <module>test</module>
   </modules>
 
