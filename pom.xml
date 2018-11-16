@@ -23,6 +23,7 @@
 		<module>cloud-zjx-ribbon</module>
 		<module>cloud-zjx-feign</module>
 		<module>cloud-zjx-ribbon-hystrix</module>
+		<module>cloud-zjx-zuul</module>
     <module>test</module>
   </modules>
 
