@@ -27,6 +27,8 @@
 		<module>cloud-zjx-config-server</module>
 		<module>cloud-zjx-config-client</module>
 		<module>cloud-zjx-provider-zipkin</module>
+		<module>cloud-zjx-eureka-cluster</module>
+		<module>cloud-zjx-provider-hi</module>
     <module>test</module>
   </modules>
 
