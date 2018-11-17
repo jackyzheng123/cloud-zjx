@@ -29,6 +29,8 @@
 		<module>cloud-zjx-provider-zipkin</module>
 		<module>cloud-zjx-eureka-cluster</module>
 		<module>cloud-zjx-provider-hi</module>
+		<module>cloud-zjx-hystrix-dashboard</module>
+		<module>cloud-zjx-turbine</module>
     <module>test</module>
   </modules>
 
