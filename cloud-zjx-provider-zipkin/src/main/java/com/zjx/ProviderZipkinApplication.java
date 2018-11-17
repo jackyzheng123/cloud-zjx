@@ -8,19 +8,21 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import brave.sampler.Sampler;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class ProviderApplication {
+@RestController
+public class ProviderZipkinApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProviderApplication.class, args);
+		SpringApplication.run(ProviderZipkinApplication.class, args);
 	}
 	
-	private static final Logger LOG = LoggerFactory.getLogger(ProviderApplication.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(ProviderZipkinApplication.class.getName());
 
 
 	@Autowired
@@ -34,7 +36,7 @@ public class ProviderApplication {
 	@RequestMapping("/miya")
 	public String home(){
 		LOG.info("calling trace cloud-zjx-provider-zipkin");
-		return restTemplate.getForObject("http://localhost:8673/info", String.class);
+		return restTemplate.getForObject("http://localhost:8763/info", String.class);
 	}
 	@RequestMapping("/info")
 	public String info(){

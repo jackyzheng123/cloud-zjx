@@ -22,6 +22,11 @@ import org.springframework.web.bind.annotation.RestController;
  * 
  * 启动程序：访问http://localhost:8768/name/dev
  * 
+ * 
+ * 	post请求向端口为8770的config-client发送请求/bus/refresh／
+ * 发送post请求：http://localhost:8881/actuator/bus-refresh
+ * 确保rabbitmq服务开启
+ * 
  * @author zhengjiaxing
  * @date 2018年11月16日
  */
