@@ -24,8 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
  * 
  * 
  * 	post请求向端口为8770的config-client发送请求/bus/refresh／
- * 发送post请求：http://localhost:8881/actuator/bus-refresh
+ * 发送post请求：http://localhost:8770/actuator/bus-refresh
  * 确保rabbitmq服务开启
+ *
+ * 另外，/actuator/bus-refresh接口可以指定服务，即使用"destination"参数，比如 “/actuator/bus-refresh?destination=customers:**” 即刷新服务名为customers的所有服务。
  * 
  * @author zhengjiaxing
  * @date 2018年11月16日

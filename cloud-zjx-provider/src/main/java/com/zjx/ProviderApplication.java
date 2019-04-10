@@ -41,7 +41,7 @@ public class ProviderApplication {
 	@RequestMapping("/info")
 	public String info(){
 		LOG.info("calling trace cloud-zjx-provider");
-		return "i'm cloud-zjx-provider";
+		return "I'm cloud-zjx-provider";
 	}
 
 	@Bean

@@ -35,13 +35,13 @@ public class HiProviderApplication {
 
 	@RequestMapping("/home")
 	public String callHome(){
-		LOG.info("calling trace cloud-zjx-provider");
+		LOG.info("I'm cloud-zjx-provider-hi, Calling trace cloud-zjx-provider-zipkin");
 		return restTemplate.getForObject("http://localhost:8081/miya", String.class);
 	}
 	@RequestMapping("/info")
 	public String info(){
-		LOG.info("calling trace cloud-zjx-provider");
-		return "i'm cloud-zjx-provider";
+		LOG.info("I'm cloud-zjx-provider-hi, Calling trace cloud-zjx-provider-zipkin");
+		return "I'm cloud-zjx-provider-hi";
 	}
 
 	@Bean

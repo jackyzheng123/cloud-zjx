@@ -12,9 +12,11 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * 打包：mvn install
  * 
  * 启动：
- * 	java -jar cloud-zjx-eureka-cluster-0.0.1-SNAPSHOT.jar - -spring.profiles.active=peer1
- * 	java -jar cloud-zjx-eureka-cluster-0.0.1-SNAPSHOT.jar - -spring.profiles.active=peer2
+ * 	java -jar cloud-zjx-eureka-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+ * 	java -jar cloud-zjx-eureka-cluster-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
  * 	java -jar cloud-zjx-provider-hi-0.0.1-SNAPSHOT.jar
+ *
+ * 	eureka.instance.preferIpAddress=true是通过设置ip让eureka让其他服务注册它
  * 
  * @author Think
  * @date 2018年11月17日
