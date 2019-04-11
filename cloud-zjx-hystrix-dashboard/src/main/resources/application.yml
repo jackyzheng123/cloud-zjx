@@ -1,0 +1,20 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: cloud-zjx-hystrix-dashboard
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
