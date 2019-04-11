@@ -1,0 +1,33 @@
+Docker Hub：
+Docker Cloud:carsoncheng/password  docker ce太慢了，docker ee收费
+DaoCloud:carson_cheng/password     国内加速
+
+======================命令======================
+systemctl start docker 
+systemctl enable docker
+
+docker images
+docker rmi imageID
+
+docker ps -a
+docker rm containerID
+docker start/restart/stop/attach containerID
+exit
+Ctrl+P+Q
+
+从宿主机拷贝到docker容器
+docker cp /file containerID:/usr/local/src
+
+docker run -it centos /bin/bash
+docker run -it carsoncheng/centos:net-tools /bin/bash
+
+重命名
+docker tag imageID carsoncheng/centos:v1.0
+
+docker pull carsoncheng/centos
+
+docker login/logout
+
+提交到docker hub
+docker commit -a "carsoncheng" -m "centos with java" containerID centos:v1.0
+docker push carsoncheng/centos
