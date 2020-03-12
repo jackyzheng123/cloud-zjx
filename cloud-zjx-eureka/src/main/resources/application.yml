@@ -8,8 +8,12 @@ spring:
 eureka:
   instance:
     hostname: localhost
+    prefer-ip-address: true
   client:
-    registerWithEureka: false
+    registerWithEureka: false #不注册自己
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    #register-with-eureka: true #部署多个Eureka Server并开启其客户端行为 推荐
+  server:
+    enable-self-preservation: false #false 关闭自我保护模式 不推荐

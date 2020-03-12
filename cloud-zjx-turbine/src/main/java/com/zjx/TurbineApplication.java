@@ -10,6 +10,8 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
+ * 依次开启eureka-server、service-hi、service-lucy、service-turbine工程
+ *
 	Hystrix Turbine将每个服务Hystrix Dashboard数据进行了整合
 	http://localhost:8764/turbine.stream
 

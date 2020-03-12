@@ -36,7 +36,7 @@ public class ProviderZipkinApplication {
 	@RequestMapping("/miya")
 	public String home(){
 		LOG.info("I'm cloud-zjx-provider-zipkin, Calling trace cloud-zjx-provider");
-		return restTemplate.getForObject("http://localhost:8763/info", String.class);
+		return restTemplate.getForObject("http://localhost:8762/info", String.class);
 	}
 	@RequestMapping("/info")
 	public String info(){
