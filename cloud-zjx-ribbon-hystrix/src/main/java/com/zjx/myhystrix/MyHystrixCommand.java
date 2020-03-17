@@ -1,4 +1,4 @@
-package com.zjx.controller;
+package com.zjx.myhystrix;
 
 import java.lang.annotation.*;
 
@@ -14,13 +14,13 @@ import java.lang.annotation.*;
 public @interface MyHystrixCommand {
 
     /**
-     * timeout
+     * timeout 默认100毫秒
      * @return
      */
     int value() default 100;
 
     /**
-     * fallback方法
+     * 指定fallback方法
      * @return
      */
     String fallback() default "";
