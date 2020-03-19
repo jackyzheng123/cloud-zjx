@@ -1,0 +1,32 @@
+
+# Spring boot application
+spring:
+  application:
+    name: spring-demo-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.160.128:3306/txlcn?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: zjx123
+    hikari:
+      maximum-pool-size: 10
+
+
+tx-lcn:
+  enabled: true
+  logger: driver-class-name: com.mysql.jdbc.Driver
+  jdbc-url: jdbc:mysql://192.168.160.128:3306/txlcn?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  username: root
+  password: zjx123
+# manager服务地址(rpc端口),可填写多个负载
+  client:
+    manager-address: 127.0.0.1:8070
+  springcloud:
+    loadbalance:
+      enabled: true
+
+logging:
+  level:
+    com:
+      codingapi: debug

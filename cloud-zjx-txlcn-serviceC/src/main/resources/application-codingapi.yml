@@ -1,0 +1,18 @@
+server:
+  port: 12011
+
+spring:
+  application:
+    name: cloud-zjx-txlcn-serviceA
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.160.128:3306/txlcn?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: zjx123
+    hikari:
+      maximum-pool-size: 5
+
+tx-lcn:
+  logger:
+    enabled: true
