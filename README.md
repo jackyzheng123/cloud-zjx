@@ -18,7 +18,7 @@ Hystrix：断路器，解决“雪崩”效应
 
 Zuul：路由转发和过滤器，比如／api/user转发到到user服务，/api/shop转发到到shop服务。zuul默认和Ribbon结合实现了负载均衡的功能；过滤器继承ZuulFilter
 
-Gateway:
+Gateway: 网关
 
 Bus：消息总线，将分布式的节点用轻量的消息代理连接起来。它可以用于广播配置文件的更改或者服务之间的通讯，也可以用于监控
 
@@ -27,6 +27,8 @@ Zipkin、Sleuth：服务追踪组件zipkin，Spring Cloud Sleuth集成了zipkin�
 Hystrix Dashboard：断路器模型,提供了数据监控和友好的图形化界面。利用Hystrix Dashboard去监控断路器的Hystrix command
 
 Hystrix Turbine：聚合所有Hystrix Dashboard服务
+
+TX-LCN: 分布式事务
 
 
 ---
