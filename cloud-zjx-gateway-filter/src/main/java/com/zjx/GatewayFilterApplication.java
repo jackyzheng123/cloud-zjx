@@ -31,10 +31,10 @@ public class GatewayFilterApplication {
         context = SpringApplication.run(GatewayFilterApplication.class, args);
     }
 
-    @Bean
-    public RouteLocatorBuilder routeLocatorBuilder() {
-        return new RouteLocatorBuilder(context);
-    }
+//    @Bean
+//    public RouteLocatorBuilder routeLocatorBuilder() {
+//        return new RouteLocatorBuilder(context);
+//    }
 
     @Bean
     public RequestTimeGatewayFilterFactory elapsedGatewayFilterFactory() {

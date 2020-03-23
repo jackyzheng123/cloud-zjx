@@ -2,8 +2,10 @@ package com.zjx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 import reactor.core.publisher.Mono;
 
 /**
@@ -25,18 +27,18 @@ public class GatewayRateLimitApplication {
     /**
      * 根据Hostname进行限流，则需要用hostAddress去判断
      */
-    @Bean
-    public HostAddrKeyResolver hostAddrKeyResolver() {
-        return new HostAddrKeyResolver();
-    }
+//    @Bean
+//    public HostAddrKeyResolver hostAddrKeyResolver() {
+//        return new HostAddrKeyResolver();
+//    }
 
     /**
      * 根据uri去限流
      */
-    @Bean
-    public UriKeyResolver uriKeyResolver() {
-        return new UriKeyResolver();
-    }
+//    @Bean
+//    public UriKeyResolver uriKeyResolver() {
+//        return new UriKeyResolver();
+//    }
 
     /**
      * 用户的维度去限流
@@ -44,5 +46,11 @@ public class GatewayRateLimitApplication {
     @Bean
     public KeyResolver userKeyResolver() {
         return exchange -> Mono.just(exchange.getRequest().getQueryParams().getFirst("user"));
+    }
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

@@ -5,7 +5,7 @@ spring:
   application:
     name: cloud-zjx-gateway-predict
   profiles:
-    active: query_route
+    active: cookie_route
 
 #After Route Predicate Factory
 ---
