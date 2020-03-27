@@ -1,18 +1,12 @@
 server:
-  port: 9090
+  port: 8090
 
 spring:
   application:
-    name: cloud-zjx-seata-business
-
-  cloud:
-    alibaba:
-      seata:
-        tx-service-group: zjx_tx_group  # 与seata server的配置一致 vgroupMapping.zjx_tx_group = "default"， seata server要注册到注册中心
-
+    name: cloud-zjx-provider
   datasource:
-    #type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://192.168.160.128:3306/db_order?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.160.128:3306/seata?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: zjx123
@@ -43,9 +37,9 @@ spring:
           max-idle: 9 # 连接池中的最大空闲连接
           min-idle: 0 # 连接池中的最小空闲连接
 
-#mybatis :
-#  mapper-locations: classpath:mapper/*.xml
-#  type-aliases-package: com.zjx.entity
+mybatis :
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zjx.entity
 
 eureka:
   client:
@@ -54,20 +48,6 @@ eureka:
   instance:
     prefer-ip-address: true
 
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 5000
-          strategy: SEMAPHORE #这里将线程策略设置为SEMAPHORE,防止与oauth2与feginclient子线程获取不到用户认证信息
-
 logging:
   level:
-    io:
-      seata: info
     com.zjx.mapper: debug
