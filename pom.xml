@@ -43,6 +43,14 @@
         <module>cloud-zjx-txlcn-serviceB</module>
         <module>cloud-zjx-txlcn-serviceC</module>
 
+        <module>cloud-zjx-s-tx-demo</module>
+        <module>cloud-zjx-seata-common</module>
+        <module>cloud-zjx-seata-commodity</module>
+        <module>cloud-zjx-seata-account</module>
+        <module>cloud-zjx-seata-order</module>
+        <module>cloud-zjx-seata-business</module>
+        <module>cloud-zjx-seata-storage</module>
+
   </modules>
 
     <properties>
