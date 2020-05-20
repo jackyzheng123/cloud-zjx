@@ -57,6 +57,7 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
 hystrix:
   command:
     default:
@@ -65,6 +66,13 @@ hystrix:
           thread:
             timeoutInMilliseconds: 5000
           strategy: SEMAPHORE #这里将线程策略设置为SEMAPHORE,防止与oauth2与feginclient子线程获取不到用户认证信息
+
+ribbon:
+  OkToRetryOnAllOperations: false #对所有操作请求都进行重试,默认false
+  ReadTimeout: 10000   #负载均衡超时时间，默认值5000
+  ConnectTimeout: 10000 #ribbon请求连接的超时时间，默认值2000
+  MaxAutoRetries: 0     #对当前实例的重试次数，默认0
+  MaxAutoRetriesNextServer: 0 #对切换实例的重试次数，默认1
 
 logging:
   level:

@@ -14,6 +14,6 @@ public interface OrderService {
     /**
      * 创建订单
      */
-    boolean create(String userId, String commodityCode, Integer count);
+    boolean purchase(String userId, String commodityCode, Integer count);
 
 }

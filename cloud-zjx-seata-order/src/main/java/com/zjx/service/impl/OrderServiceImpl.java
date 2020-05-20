@@ -1,17 +1,16 @@
 package com.zjx.service.impl;
 
-import com.zjx.mapper.OrderMapper;
-import com.zjx.dto.AccountDTO;
 import com.zjx.dto.CommodityDTO;
 import com.zjx.dto.OrderDTO;
 import com.zjx.feign.AccountServiceClient;
 import com.zjx.feign.CommodityServiceClient;
+import com.zjx.feign.StorageServiceClient;
+import com.zjx.mapper.OrderMapper;
 import com.zjx.service.OrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -25,18 +24,25 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderMapper orderMapper;
 
+    private final StorageServiceClient storageServiceClient;
+
     private final AccountServiceClient accountServiceClient;
 
     private final CommodityServiceClient commodityServiceClient;
 
-    public OrderServiceImpl(OrderMapper orderMapper, AccountServiceClient accountServiceClient, CommodityServiceClient commodityServiceClient) {
+    public OrderServiceImpl(OrderMapper orderMapper, StorageServiceClient storageServiceClient, AccountServiceClient accountServiceClient, CommodityServiceClient commodityServiceClient) {
         this.orderMapper = orderMapper;
+        this.storageServiceClient = storageServiceClient;
         this.accountServiceClient = accountServiceClient;
         this.commodityServiceClient = commodityServiceClient;
     }
 
     @Override
-    public boolean create(String userId, String commodityCode, Integer count) {
+    @GlobalTransactional
+    public boolean purchase(String userId, String commodityCode, Integer count) {
+        // 减库存
+        storageServiceClient.deduct(commodityCode, count);
+
         // 计算订单金额
         final BigDecimal orderMoney = calculate(commodityCode, count);
         // 支付
@@ -49,6 +55,8 @@ public class OrderServiceImpl implements OrderService {
         orderDTO.setCommodityCode(commodityCode);
         orderDTO.setCount(count);
         orderDTO.setMoney(orderMoney);
+
+        // int i = 1/0; // TODO 模拟异常
         return orderMapper.insert(orderDTO);
     }
 

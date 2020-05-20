@@ -2,10 +2,7 @@ package com.zjx.controller;
 
 import com.zjx.dto.OrderDTO;
 import com.zjx.service.OrderService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description
@@ -23,10 +20,10 @@ public class OrderController {
     }
 
     /**
-     * 创建订单
+     * 下单
      */
-    @PostMapping("/add")
-    public boolean create(@RequestParam("userId") String userId, @RequestParam("commodityCode") String commodityCode, @RequestParam("count") Integer count) {
-        return orderService.create(userId, commodityCode, count);
+    @GetMapping("/purchase")
+    public boolean purchase(@RequestParam("userId") String userId, @RequestParam("commodityCode") String commodityCode, @RequestParam("count") Integer count) {
+        return orderService.purchase(userId, commodityCode, count);
     }
 }
